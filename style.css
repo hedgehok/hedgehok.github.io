@@ -1,3 +1,5 @@
 body {
-    background: url(http://unsplash.it/1800/1000?image=966) no-repeat;
+    background: url(http://unsplash.it/1800/1000?image=966);
+    background-size: cover;
+    min-height: 100vh;
 }
