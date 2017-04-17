@@ -1,0 +1,113 @@
+@media screen and (max-width: 767px) {
+  .header__center {
+    padding: 15px 20px;
+  }
+  .header__menu {
+    display: none;
+  }
+  .header__logo-block, .header__links {
+    width: 50%;
+  }
+  .header__logo-block a, .header__links a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .header__logo-block a:first-child, .header__links a:first-child {
+    margin-left: 0px;
+  }
+  .header__logo-block a:last-child, .header__links a:last-child {
+    margin-right: 0px;
+  }
+  .mobile-menu__group {
+    display: inline-block;
+    width: 24px;
+    height: 14px;
+    background: url("../img/group.png") center no-repeat;
+    margin-bottom: -2px;
+  }
+  .main__subtitle {
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 15px;
+  }
+  .main__title {
+    width: 80%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main__title h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .main__info {
+    margin: 0;
+  }
+  .main__info-place, .main__info-date {
+    display: block;
+    margin: 0;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .main__info-place {
+    margin-top: 20px;
+  }
+  .main__info-date {
+    margin-top: 15px;
+  }
+  .main__reg {
+    margin: 42px 20px 0px 20px;
+  }
+  .main__reg .reg {
+    display: block;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 8px 60px 10px 60px;
+  }
+  .main__soc {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .footer__center {
+    padding: 40px 20px;
+  }
+  .footer__copy, .footer__address, .footer__soc, .footer__contacts {
+    display: block;
+    width: 100%;
+    margin: 0;
+    float: none;
+    text-align: left;
+  }
+  .footer__address-text {
+    display: block;
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .footer__address-place {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 25px;
+  }
+  .footer__address-mail {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    line-height: 25px;
+  }
+  .footer__soc {
+    padding: 0;
+    margin-top: 20px;
+  }
+  .footer__contacts-phone {
+    display: block;
+    font-size: 24px;
+    line-height: 40px;
+    margin-top: 15px;
+  }
+  .footer__contacts-text {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}

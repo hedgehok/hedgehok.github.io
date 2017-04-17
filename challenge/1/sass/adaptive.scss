@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+@import 'mixins';
+@import 'variables';
+
+@media #{$media-phone-landscape} {
+  .header {
+    &__center {
+      padding: 15px 20px;
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__logo-block,
+    &__links {
+      width: 50%;
+
+      & a {
+        margin-left: 10px;
+        margin-right: 10px;
+
+        &:first-child {
+          margin-left: 0px;
+        }
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+
+  .mobile-menu {
+    &__group {
+      display: inline-block;
+      width: 24px;
+      height: 14px;
+      background: url("../img/group.png") center no-repeat;
+      margin-bottom: -2px;
+    }
+  }
+
+  .main {
+    &__subtitle {
+      font-size: 13px;
+      line-height: 18px;
+      margin-top: 15px;
+    }
+
+    &__title {
+      width: 80%;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+
+      h1 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    &__info {
+      margin: 0;
+
+      &-place,
+      &-date {
+        display: block;
+        margin: 0;
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+      &-place {
+        margin-top: 20px;
+      }
+
+      &-date {
+        margin-top: 15px;
+      }
+    }
+
+    &__reg {
+      margin: 42px 20px 0px 20px;
+
+      & .reg {
+        display: block;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 8px 60px 10px 60px;
+      }
+    }
+
+    &__soc {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .footer {
+    &__center {
+      padding: 40px 20px;
+    }
+
+    &__copy,
+    &__address,
+    &__soc,
+    &__contacts {
+      display: block;
+      width: 100%;
+      margin: 0;
+      float: none;
+      text-align: left;
+    }
+
+    &__address {
+      &-text {
+        display: block;
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 20px;
+      }
+
+      &-place {
+        display: block;
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 25px;
+      }
+
+      &-mail {
+        display: block;
+        margin-top: 5px;
+        font-size: 13px;
+        line-height: 25px;
+      }
+    }
+
+    &__soc {
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    &__contacts {
+      &-phone {
+        display: block;
+        font-size: 24px;
+        line-height: 40px;
+        margin-top: 15px;
+      }
+
+      &-text {
+        font-size: 13px;
+        line-height: 20px;
+      }
+    }
+  }
+}

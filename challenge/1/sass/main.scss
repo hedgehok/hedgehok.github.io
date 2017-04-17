@@ -1,0 +1,408 @@
+@charset "UTF-8";
+
+@import 'mixins';
+@import 'variables';
+
+html {
+}
+
+body {
+  padding: 0;
+  margin:0;
+  font-family: $font-base;
+  font-size: $font-size-base;
+  line-height: normal;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+.header {
+  @include clearfix();
+  color: #ffffff;
+
+  a {
+    text-decoration: none;
+  }
+
+  a,
+  a:active,
+  a:hover,
+  a:visited {
+    color: #ffffff;
+  }
+
+  &__center {
+    margin: 0px auto;
+    padding: 20px 50px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    @include clearfix();
+  }
+
+  &__logo-block,
+  &__menu {
+    float: left;
+    box-sizing: border-box;
+  }
+
+  &__links {
+    float: right;
+    box-sizing: border-box;
+  }
+
+  &__logo-block {
+    text-align: left;
+    width: 15%;
+
+    & img {
+      display: block;
+    }
+  }
+
+  &__menu {
+    text-align: center;
+    width: 70%;
+
+    & .menu {
+      display: inline-block;
+    }
+  }
+
+  &__links {
+    text-align: right;
+    width: 15%;
+  }
+
+  & .login {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 4px 16px 6px 16px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 2px;
+  }
+}
+
+.menu {
+  &__plate {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    font-size: 15px;
+    line-height: 32px;
+    margin: 0px 20px;
+  }
+}
+
+.mobile-menu {
+  &__group {
+    display: none;
+  }
+}
+
+.footer {
+  background-color: #fff;
+
+  &__center {
+    margin: 0px auto;
+    padding: 50px 45px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    @include clearfix();
+  }
+
+  &__copy {
+    float: left;
+    color: #A5ABAE;
+    line-height: 25px;
+    text-align: left;
+    margin-right: 40px;
+  }
+
+  &__address {
+    float: left;
+    font-size: 13px;
+    line-height: 25px;
+    margin-right: 70px;
+
+    &-text {
+      display: block;
+    }
+
+    &-place,
+    &-mail {
+      color: #2591D4;
+      &:active,
+      &:hover,
+      &:visited {
+        color: #2591D4;
+      }
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-place {
+      margin-right: 20px;
+
+      &:before {
+        content: " ";
+        width: 8px;
+        height: 12px;
+        background: url("../img/map.png") center no-repeat;
+        display: inline-block;
+        margin-right: 6px;
+      }
+    }
+
+    &-mail {
+      &:before {
+        content: " ";
+        width: 11px;
+        height: 9px;
+        background: url("../img/mail.png") center no-repeat;
+        display: inline-block;
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &__soc {
+    float: left;
+    padding: 13px 0px;
+  }
+
+  &__contacts {
+    float: right;
+    text-align: right;
+
+    &-phone {
+      text-decoration: none;
+      color: #333333;
+      &:active,
+      &:hover,
+      &:visited {
+        color: #333333;
+      }
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    &-text {
+      display: block;
+      color: #A5ABAE;
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+}
+
+.soc {
+  &__list {
+    @include clearfix();
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    float: left;
+    margin: 0px 4px;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    //background-color: rgba(201,205,206,1);
+
+    &.is-fb {
+      background: url("../img/fb.png") center no-repeat;
+    }
+
+    &.is-in {
+      background: url("../img/in.png") center no-repeat;
+    }
+
+    &.is-im {
+      background: url("../img/im.png") center no-repeat;
+    }
+
+    &.is-vk {
+      background: url("../img/vk.png") center no-repeat;
+    }
+  }
+}
+
+.main {
+
+  &__subtitle {
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 70px;
+  }
+
+  &__title {
+    margin-top: 20px;
+    text-align: center;
+
+    & h1 {
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+      font-size: 60px;
+      line-height: 75px;
+      font-weight: 300;
+    }
+  }
+
+  &__info {
+    text-align: center;
+    margin-top: 60px;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 28px;
+
+    &-place,
+    &-date {
+      margin: 0px 20px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    &-place {
+      &:before {
+        content: " ";
+        width: 14px;
+        height: 20px;
+        background: url("../img/ic_place.png") center no-repeat;
+        display: inline-block;
+        margin-right: 12px;
+      }
+    }
+
+    &-date {
+      &:before {
+        content: " ";
+        width: 18px;
+        height: 20px;
+        background: url("../img/ic_today.png") center no-repeat;
+        display: inline-block;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &__reg {
+    margin-top: 78px;
+    text-align: center;
+  }
+
+  &__soc {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+}
+
+.reg {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 24px;
+  color: #333333;
+  background-color: #FFCF00;
+  border-radius: 4px;
+  padding: 16px 40px 20px 40px;
+}
+
+.soc-main {
+  padding: 11px 20px;
+  background-color: rgba(255,255,255,.2);
+  border-radius: 2px;
+  display: inline-block;
+  box-sizing: border-box;
+
+  &__list {
+    @include clearfix();
+    display: block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  &__item {
+    float: left;
+    margin: 0px 2px;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url("../img/bitmap.png") no-repeat;
+
+    &.is-sh {
+      background: url("../img/shape.png") center no-repeat;
+    }
+
+    &.is-vk {
+      background-position-x: 0px;
+    }
+
+    &.is-fb {
+      background-position-x: -22px;
+    }
+
+    &.is-ok {
+      background-position-x: -44px;
+    }
+
+    &.is-gg {
+      background-position-x: -66px;
+    }
+
+    &.is-tw {
+      background-position-x: -88px;
+    }
+
+    &.is-in {
+      background-position-x: -110px;
+    }
+  }
+}
