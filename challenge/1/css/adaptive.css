@@ -1,4 +1,7 @@
 @media screen and (max-width: 767px) {
+  .main {
+    background: url("../img/bg_mob.png") center no-repeat;
+  }
   .header__center {
     padding: 15px 20px;
   }

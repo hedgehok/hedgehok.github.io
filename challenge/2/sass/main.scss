@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+html {}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: #d4d4d4;
+}
+
+#main {
+  margin: 100px auto;
+  width: 600px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.filter {
+  width: 100%;
+  padding: 20px 0px;
+  border-bottom: 1px dotted #d4d4d4;
+
+  & input[type="text"],
+  & select {
+    margin: 0px 10px;
+  }
+
+  & input[type="text"] {
+    width: 80px;
+  }
+}
+
+table {
+  width: 100%;
+
+  & thead td {
+    text-align: left;
+    padding: 10px 10px;
+  }
+
+  & td {
+    padding: 5px 10px;
+    border-bottom: 1px dotted #d4d4d4;
+  }
+}

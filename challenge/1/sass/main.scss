@@ -16,6 +16,10 @@ body {
   background-color: $color-bg;
 }
 
+.main {
+  background: url('../img/bg.png') center no-repeat;
+}
+
 .header {
   @include clearfix();
   color: #ffffff;

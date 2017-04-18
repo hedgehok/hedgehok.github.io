@@ -4,6 +4,10 @@
 @import 'variables';
 
 @media #{$media-phone-landscape} {
+  .main {
+    background: url('../img/bg_mob.png') center no-repeat;
+  }
+
   .header {
     &__center {
       padding: 15px 20px;

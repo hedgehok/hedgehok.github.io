@@ -8,6 +8,10 @@ body {
   background-color: #458dc5;
 }
 
+.main {
+  background: url("../img/bg.png") center no-repeat;
+}
+
 .header {
   color: #ffffff;
 }
