@@ -19,6 +19,12 @@ var Filter = React.createClass({
         this.props.onFormChange(formData);
     },
 
+    renderOptions : function(item) {
+        return (
+            <option key={item} value={item}>{item}</option>
+        )
+    },
+
     render : function() {
         return(
             <form className="filter" onSubmit={this.formChanged}>
@@ -29,16 +35,12 @@ var Filter = React.createClass({
 
                 <select ref="customer" onChange={this.formChanged}>
                     <option value="all">Все заказчики</option>
-                    <option value="customer1">customer1</option>
-                    <option value="customer2">customer2</option>
-                    <option value="customer3">customer3</option>
+                    { this.props.customers.map(this.renderOptions) }
                 </select>
 
                 <select ref="status" onChange={this.formChanged}>
                     <option value="all">Все статусы</option>
-                    <option value="status1">status1</option>
-                    <option value="status2">status2</option>
-                    <option value="status3">status3</option>
+                    { this.props.statuses.map(this.renderOptions) }
                 </select>
             </form>
         )
@@ -51,11 +53,33 @@ var Filter = React.createClass({
 */
 var App = React.createClass({
     getInitialState : function() {
+        var sampleData = require('./sample-data');
+
         return {
-            items: require('./sample-data'),
-            allItems: require('./sample-data'),
-            sorted: { name: true, date: true, status: true, customer: true }
+            items: sampleData,
+            allItems: sampleData,
+            sorted: { name: true, date: true, status: true, customer: true },
+            statuses : this.filterStatuses(sampleData, 'status'),
+            customers : this.filterStatuses(sampleData, 'customer')
         }
+    },
+
+    filterStatuses : function(data, field) {
+        // Получаем уникальный набор ключей для селектов
+        var outputData = data.reduce((total, item) => {
+            if (total.indexOf(item[field]) < 0) {
+                total.push(item[field]);
+            }
+            return total;
+        }, []);
+
+        // и сортируем по возрастанию
+        outputData = outputData.sort((a, b) => {
+            if (a === b) { return 0; }
+            return a > b;
+        });
+
+        return outputData;
     },
 
     checkDate : function(val) {
@@ -103,17 +127,29 @@ var App = React.createClass({
             });
         }
 
-        // status filter
-        if (formData.status !== 'all') {
-            items = items.filter(item => item.status === formData.status);
-        }
+        /*
+            Тут связка фильтров - первичным является customer
+         */
+
+        var customers = this.filterStatuses(items, 'customer');
 
         // customer filter
         if (formData.customer !== 'all') {
             items = items.filter(item => item.customer === formData.customer);
         }
 
-        this.setState({ items : items });
+        var statuses = this.filterStatuses(items, 'status');
+
+        // status filter
+        if (formData.status !== 'all') {
+            items = items.filter(item => item.status === formData.status);
+        }
+
+        this.setState({
+            items : items,
+            statuses : statuses,
+            customers : customers
+        });
     },
 
     sortTable : function(e) {
@@ -142,8 +178,8 @@ var App = React.createClass({
             <tr key={item.id}>
                 <td>{item.name}</td>
                 <td>{item.date}</td>
-                <td>{item.status}</td>
                 <td>{item.customer}</td>
+                <td>{item.status}</td>
             </tr>
         )
     },
@@ -151,14 +187,14 @@ var App = React.createClass({
     render : function() {
         return(
             <div>
-                <Filter onFormChange={this.onFormChange} />
+                <Filter onFormChange={this.onFormChange} customers={this.state.customers} statuses={this.state.statuses} />
                 <table>
                     <thead>
                         <tr>
                             <td><a href="#" onClick={this.sortTable} data-sort="name">Название</a></td>
                             <td><a href="#" onClick={this.sortTable} data-sort="date">Дата</a></td>
-                            <td><a href="#" onClick={this.sortTable} data-sort="status">Статус</a></td>
                             <td><a href="#" onClick={this.sortTable} data-sort="customer">Заказчик</a></td>
+                            <td><a href="#" onClick={this.sortTable} data-sort="status">Статус</a></td>
                         </tr>
                     </thead>
                     <tbody>

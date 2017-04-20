@@ -22,6 +22,11 @@ var App = React.createClass({
         }
     },
 
+    addToOrder : function(key) {
+        this.state.order[key] = this.state.order[key] + 1 || 1;
+        this.setState({ order : this.state.order });
+    },
+
     addFish : function(fish) {
         var timestamp = (new Date()).getTime();
         // update state object
@@ -36,8 +41,8 @@ var App = React.createClass({
         })
     },
 
-    fenderFish : function(key) {
-        return <Fish key={key} index={key} />
+    renderFish : function(key) {
+        return <Fish key={key} index={key} details={this.state.fishes[key]} addToOrder={this.addToOrder} />
     },
 
     render : function() {
@@ -46,7 +51,7 @@ var App = React.createClass({
                 <div className="menu">
                     <Header tagline="Fresh Seafood Market" />
                     <ul className="list-of-fishes">
-                        {Object.keys(this.state.fishes).map(this.fenderFish)}
+                        {Object.keys(this.state.fishes).map(this.renderFish)}
                     </ul>
                 </div>
                 <Order />
@@ -55,6 +60,39 @@ var App = React.createClass({
         )
     }
 });
+
+/*
+    Fish
+    <Fish />
+ */
+
+var Fish = React.createClass({
+    onButtonClick : function() {
+        this.props.addToOrder(this.props.index);
+    },
+
+    render : function() {
+        var details = this.props.details;
+        var isAvailable = (details.status === 'available' ? true : false);
+        var buttonText = (isAvailable ? 'Add to order' : 'Sold Out!');
+        return (
+            <li className="menu-fish">
+                <img src={details.image} alt={details.name} />
+                <h3 className="fish-name">
+                    {details.name}
+                    <span className="price">{h.formatPrice(details.price)}</span>
+                </h3>
+                <p>{details.desc}</p>
+                <button disabled={!isAvailable} onClick={this.onButtonClick}>{buttonText}</button>
+            </li>
+        )
+    }
+});
+
+
+
+
+
 
 /*
     Add Fish Form
