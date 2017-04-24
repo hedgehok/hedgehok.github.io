@@ -1,0 +1,1 @@
+Задание 2 но на Angular 2 + TypeScript
