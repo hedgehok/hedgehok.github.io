@@ -1,16 +1,7 @@
 <h1>Пример шапки</h1>
 <h3>Меню</h3>
 <ul class="nav nav-pills">
-            <li class="">
-                        <a href="http://localhost:4200/catalog" target=_parent>Каталог</a>
-            </li>
-            <li class="">
-                        <a href="http://localhost:4200/customers" target=_parent>Заказчики</a>
-            </li>
-            <li class="">
-                        <a href="http://localhost:4200/documents" target=_parent>Документы</a>
-            </li>
-            <li>
-                        <a href="javascript:window.parent.postMessage('catalog', '*')">Ивент</a>
-            </li>
+            <li><a href="javascript:window.parent.postMessage('catalog', '*')">Каталог</a></li>
+            <li><a href="javascript:window.parent.postMessage('customers', '*')">Заказчики</a></li>
+            <li><a href="javascript:window.parent.postMessage('documents', '*')">Документы</a></li>
 </ul>
