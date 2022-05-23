@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --loaderSize: 150px;
+    --pointSize: 15px;
+    --pointColor: #00ff0a;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #042104;
+    animation: animateColor 8s linear infinite;
+}
+
+.load {
+    display: flex;
+}
+
+.load .circle {
+    height: var(--loaderSize);
+    width: var(--loaderSize);
+    position: relative;
+    background-color: transparent;
+    margin: 0 calc(0px - (var(--pointSize) / 2));
+}
+
+.load .circle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+}
+
+.load .circle span::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - (var(--pointSize) / 2));
+    right: 0;
+    background: var(--pointColor);
+    height: var(--pointSize);
+    width: var(--pointSize);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--pointColor),
+                0 0 20px var(--pointColor),
+                0 0 40px var(--pointColor),
+                0 0 60px var(--pointColor),
+                0 0 800px var(--pointColor),
+                0 0 100px var(--pointColor);
+    transform: scale(0.1);
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.load .circle:nth-child(2) {
+    transform: rotate(-180deg);
+}
+
+.load .circle:nth-child(2) span::before {
+    animation-delay: calc(-0.1s * var(--i));
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+
+    50%, 100% {
+        transform: scale(0.1);
+    }
+}
+
+@keyframes animateColor {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
