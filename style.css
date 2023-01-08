@@ -1,5 +1,11 @@
 body {
-    background: url(http://unsplash.it/1800/1000?image=966);
+    background: url(https://picsum.photos/1800/1000);
     background-size: cover;
     min-height: 100vh;
+}
+
+.bg {
+    min-height: 100vh;
+    background: #fff;
+    opacity: 0.8;
 }
