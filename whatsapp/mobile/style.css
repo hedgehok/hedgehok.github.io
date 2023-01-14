@@ -21,12 +21,13 @@ body {
     height: 600px;
     background: #fff;
     box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+    overflow: hidden;
 }
 
 header {
     position: relative;
     background: #008069;
-    padding: 10px 20px;
+    padding: 20px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,4 +51,77 @@ header .actions a {
     display: flex;
     font-size: 1.5em;
     text-decoration: none;
+}
+
+.tabs input {
+    visibility: hidden;
+    display: none;
+}
+
+.buttons {
+    position: relative;
+    display: flex;
+    background: #008069;
+    border-bottom: 1px solid rgba(0,0,0,0.25);;
+}
+
+.buttons label {
+    width: 33.333%;
+    color: #fff;
+    opacity: 0.75;
+    text-align: center;
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .buttons label:nth-child(3) {
+    opacity: 1;
+}
+
+.underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 33.333%;
+    height: 3px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.tabs input:nth-child(1):checked ~ .buttons .underline {
+    left: 0;
+}
+.tabs input:nth-child(2):checked ~ .buttons .underline {
+    left: 33.333%;
+}
+.tabs input:nth-child(3):checked ~ .buttons .underline {
+    left: 66.666%;
+}
+
+.content {
+    position: relative;
+    width: calc(340px * 3);
+    display: flex;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.content .box {
+    position: relative;
+    width: 340px;
+}
+
+.tabs input:nth-child(1):checked ~ .content {
+    left: calc(340px * 0);
+}
+.tabs input:nth-child(2):checked ~ .content {
+    left: calc(340px * -1);
+}
+.tabs input:nth-child(3):checked ~ .content {
+    left: calc(340px * -2);
 }
