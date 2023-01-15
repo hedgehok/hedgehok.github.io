@@ -8,11 +8,11 @@
 }
 
 body { 
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f2eadf;
+    background: #f2eadf; */
 }
 
 ::-webkit-scrollbar {
@@ -29,20 +29,24 @@ body {
 
 .container {
     position: relative;
-    width: 340px;
-    height: 600px;
+    /* width: 340px;
+    height: 600px; */
     background: #fff;
     box-shadow: 0 5px 5px rgba(0,0,0,0.15);
     overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
 }
 
 header {
     position: relative;
     background: #008069;
-    padding: 20px 10px;
+    /* padding: 20px 10px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
+    height: 60px;
 }
 
 header .logo {
@@ -74,19 +78,23 @@ header .actions a {
     position: relative;
     display: flex;
     background: #008069;
-    border-bottom: 1px solid rgba(0,0,0,0.25);;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    height: 28px;
 }
 
 .buttons label {
     width: 33.333%;
     color: #fff;
     opacity: 0.75;
-    text-align: center;
-    padding: 5px 0;
+    /* text-align: center;
+    padding: 5px 0; */
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.9em;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
@@ -117,31 +125,37 @@ header .actions a {
 
 .content {
     position: relative;
-    width: calc(340px * 3);
+    /* width: calc(340px * 3); */
     display: flex;
     transition: 0.5s;
     overflow: hidden;
+    width: calc(100vw * 3);
 }
 
 .content .box {
     position: relative;
-    width: 340px;
+    /* width: 340px; */
+    width: 100%;
 }
 
 .tabs input:nth-child(1):checked ~ .content {
-    left: calc(340px * 0);
+    /* left: calc(340px * 0); */
+    left: calc(100vw * 0);
 }
 .tabs input:nth-child(2):checked ~ .content {
-    left: calc(340px * -1);
+    /* left: calc(340px * -1); */
+    left: calc(100vw * -1);
 }
 .tabs input:nth-child(3):checked ~ .content {
-    left: calc(340px * -2);
+    /* left: calc(340px * -2); */
+    left: calc(100vw * -2);
 }
 
 .content .data {
     position: relative;
     width: 100%;
-    height: 510px;
+    /* height: 510px; */
+    height: calc(100vh - 88px);
 }
 
 .chatlist {
