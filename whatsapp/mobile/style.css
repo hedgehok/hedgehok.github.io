@@ -254,3 +254,35 @@ header .actions a {
     color: #111;
     font-weight: 600;
 }
+
+.status .plus {
+    position: absolute;
+    top: 38px;
+    left: 40px;
+    width: 25px;
+    height: 25px;
+    background: #008069;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.box label {
+    padding: 0 15px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.85em;
+}
+
+.unseen .imgBx {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #008069;
+}
+
+.seen .imgBx {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #bbb;
+}
