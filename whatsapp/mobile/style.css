@@ -286,3 +286,13 @@ header .actions a {
 .seen .imgBx {
     box-shadow: 0 0 0 2px #fff, 0 0 0 4px #bbb;
 }
+
+.green {
+    background: #008069;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5em;
+    rotate: -45deg;
+}
