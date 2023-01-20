@@ -296,3 +296,18 @@ header .actions a {
     font-size: 1.5em;
     rotate: -45deg;
 }
+
+.incoming ion-icon {
+    color: #0f0;
+    rotate: 45deg;
+}
+
+.outgoing ion-icon {
+    color: #f00;
+    rotate: 45deg;
+}
+
+.call {
+    font-size: 1.5em;
+    color: #008069;
+}
